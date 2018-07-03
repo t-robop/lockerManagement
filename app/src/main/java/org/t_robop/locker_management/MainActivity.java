@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity{
         //TabLayoutにタブを追加  Tabの名前は下のgetPageTitleで付与してるのでここではつけない
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
         //ここでは、タブを三個生成してる
-        for(int i = 0;i<4;i++) {
+        for(int i = 0;i<6;i++) {
             tabLayout.addTab(tabLayout.newTab().setText(""));
         }
         //ViewPagerの宣言
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity{
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
 
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
     }
 
     //ViewPagerが切り替わるたびに下のgetItemで取得したFragmentを呼び出して画面を生成
@@ -55,13 +56,19 @@ public class MainActivity extends AppCompatActivity{
                     fragment = new MainActivityFragment();
                     break;
                 case 1:
-                    fragment = new Locker2Fragment();
+                    fragment = new Locker1Fragment();
                     break;
                 case 2:
-                    fragment = new MainActivityFragment();
+                    fragment = new Locker1Fragment();
                     break;
                 case 3:
-                    fragment = new MainActivityFragment();
+                    fragment = new Locker1Fragment();
+                    break;
+                case 4:
+                    fragment = new Locker1Fragment();
+                    break;
+                case 5:
+                    fragment = new Locker1Fragment();
                     break;
                 default:
                     break;
@@ -73,7 +80,7 @@ public class MainActivity extends AppCompatActivity{
         //ここを増やさないと、いくら上でタブやCaseを追加したところでタブは増えない
         @Override
         public int getCount() {
-            return 4;
+            return 6;
         }
 
         //ここでタブの名前を指定
