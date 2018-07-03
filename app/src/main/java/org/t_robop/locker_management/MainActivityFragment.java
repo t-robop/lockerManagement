@@ -35,9 +35,10 @@ public class MainActivityFragment extends Fragment {
 
                     switch (view.getId()) {
                         case R.id.edit:
-//
+
                             break;
                         case R.id.delete:
+
                             break;
                     }
                 }
